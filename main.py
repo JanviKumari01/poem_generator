@@ -32,8 +32,8 @@ builder.set_finish_point("generate")  # Changed from END to "generate"
 graph = builder.compile()
 
 theme = input("Enter a theme or topic for your poem: ")
-sarcasam= input("Enter the sarcasa,")
-prompt = f"Write a beautiful and creative poem about theme '{theme} and sarcasam should be {sarcasam}'."
+sarcasm= input("Enter the sarcasm: ")
+prompt = f"Write a beautiful and creative poem about theme '{theme} and sarcasm should be {sarcasm}'."
 
 # Run the graph
 result = graph.invoke({"prompt": prompt})
