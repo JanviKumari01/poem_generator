@@ -17,7 +17,6 @@ model = genai.GenerativeModel("gemini-2.0-flash")
 class PoemState(TypedDict):
     prompt: str
     poem: str
-
 # Node function: generate a poem
 def generate_poem(state: PoemState) -> PoemState:
     prompt = state["prompt"]
@@ -33,7 +32,8 @@ builder.set_finish_point("generate")  # Changed from END to "generate"
 graph = builder.compile()
 
 theme = input("Enter a theme or topic for your poem: ")
-prompt = f"Write a beautiful and creative poem about '{theme}'."
+sarcasm= input("Enter the sarcasm: ")
+prompt = f"Write a beautiful and creative poem about theme '{theme} and sarcasm should be {sarcasm}'."
 
 # Run the graph
 result = graph.invoke({"prompt": prompt})
